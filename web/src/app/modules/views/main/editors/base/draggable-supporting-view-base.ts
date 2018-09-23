@@ -46,8 +46,7 @@ export abstract class DraggableSupportingViewBase extends SpecmateViewBase {
         this.dragulaService.dropModel.subscribe((value: any) => this.onDropModel(value.slice(1)));
     }
 
-    private onDropModel(value: any): void {
-        let [el, target, source] = value;
+    private onDropModel(value: any): void {        
         this.sanitizeContentPositions(true);
     }
 

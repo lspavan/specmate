@@ -72,7 +72,7 @@ export class SpecmateDataService {
 
     public createElement(element: IContainer, virtual: boolean, compoundId: string): Promise<void> {
         if (virtual) {
-            return Promise.resolve(this.createElementVirtual(element, compoundId));
+            return Promise.resolve(createElementVirtual(element, compoundId));
         }
         return this.createElementServer(element);
     }
@@ -142,14 +142,14 @@ export class SpecmateDataService {
 
     public updateElement(element: IContainer, virtual: boolean, compoundId: string): Promise<void> {
         if (virtual) {
-            return Promise.resolve(this.updateElementVirtual(element, compoundId));
+            return Promise.resolve(updateElementVirtual(element, compoundId));
         }
         return this.updateElementServer(element);
     }
 
     public deleteElement(url: string, virtual: boolean, compoundId: string): Promise<void> {
         if (virtual || this.scheduler.isVirtualElement(url)) {
-            return Promise.resolve(this.deleteElementVirtual(url, compoundId));
+            return Promise.resolve(deleteElementVirtual(url, compoundId));
         }
         return this.deleteElementServer(url);
     }

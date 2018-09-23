@@ -55,9 +55,9 @@ export class Command {
             if (changedFields === undefined) {
                 return undefined;
             }
-            this._changedFields = changedFields.sort();
+            
         }
-        return this._changedFields;
+        return changedFields.sort();
     }
 
     public changedSameFields(other: Command): boolean {
